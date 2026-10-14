@@ -1,0 +1,55 @@
+CREATE TABLE customers (
+    customer_id        VARCHAR(20) PRIMARY KEY,
+    customer_name      VARCHAR(150),
+    gender             VARCHAR(20),
+    age                INTEGER,
+    age_group          VARCHAR(50),
+    date_of_birth      DATE,
+    email              VARCHAR(150),
+    phone              VARCHAR(30),
+    city               VARCHAR(100),
+    state              VARCHAR(100),
+    pincode            VARCHAR(10),
+    registration_date  DATE,
+    customer_tier      VARCHAR(50),
+    total_orders       INTEGER,
+    total_spent        NUMERIC(15,2)
+);
+
+CREATE TABLE products (
+    product_id          VARCHAR(20) PRIMARY KEY,
+    product_name        VARCHAR(200),
+    category            VARCHAR(100),
+    brand               VARCHAR(100),
+    original_price      NUMERIC(12,2),
+    discount_percent    NUMERIC(6,2),
+    discount_amount     NUMERIC(12,2),
+    selling_price       NUMERIC(12,2),
+    stock_quantity      INTEGER,
+    weight_kg           NUMERIC(10,3),
+    avg_rating          NUMERIC(4,2),
+    total_reviews       INTEGER
+);
+CREATE TABLE sales (
+    order_id            VARCHAR(30) PRIMARY KEY,
+    customer_id         VARCHAR(20),
+    product_id          VARCHAR(20),
+    order_date          DATE,
+    order_time          TIME,
+    delivery_date       DATE,
+    quantity            INTEGER,
+    unit_price          NUMERIC(12,2),
+    order_value         NUMERIC(15,2),
+    shipping_cost       NUMERIC(12,2),
+    coupon_code         VARCHAR(50),
+    coupon_discount     NUMERIC(12,2),
+    total_amount        NUMERIC(15,2),
+    payment_mode        VARCHAR(50),
+    order_status        VARCHAR(50),
+    rating              NUMERIC(3,1),
+    review_text         TEXT,
+    city                VARCHAR(100),
+    state               VARCHAR(100),
+    customer_age        INTEGER,
+    customer_age_group  VARCHAR(50)
+);
